@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withRouter } from 'react-router-dom'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 import { signIn } from '../api'
 import messages from '../messages'
@@ -38,28 +40,37 @@ class SignIn extends Component {
     const { email, password } = this.state
 
     return (
-      <form className='auth-form' onSubmit={this.onSignIn}>
-        <h3>Sign In</h3>
-        <label htmlFor="email">Email</label>
-        <input
-          required
-          type="email"
-          name="email"
-          value={email}
-          placeholder="Email"
-          onChange={this.handleChange}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          required
-          name="password"
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Sign In</button>
-      </form>
+      <Fragment>
+        <Form className='auth-form' onSubmit={this.onSignIn}>
+          <h3>Sign In</h3>
+          <Form.Group controlId="email">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              required
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+            />
+            <Form.Text className="text-danger">
+            (Dont use your actual email)
+            </Form.Text>
+          </Form.Group>
+          <Form.Group controlId="password">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Enter password"
+              required
+              name="password"
+              value={password}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Button type='submit'>Sign In</Button>
+        </Form>
+      </Fragment>
     )
   }
 }

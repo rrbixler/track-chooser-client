@@ -8,6 +8,11 @@ import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
+import Tracks from './routes/Tracks'
+import TrackCreate from './routes/TrackCreate'
+import Track from './routes/Track'
+import TrackEdit from './routes/TrackEdit'
+import SearchTracks from './routes/SearchTracks'
 
 import Alert from 'react-bootstrap/Alert'
 
@@ -54,6 +59,21 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/tracks' render={() => (
+            <Tracks alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/track-create' render={({ match }) => (
+            <TrackCreate match={match} alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/tracks/:id' render={({ match }) => (
+            <Track match={match} alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/tracks/:id/edit' render={({ match }) => (
+            <TrackEdit match={match} alert={this.alert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/search-tracks' render={({ match }) => (
+            <SearchTracks match={match} alert={this.alert} user={user} />
           )} />
         </main>
       </React.Fragment>
