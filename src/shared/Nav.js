@@ -9,9 +9,9 @@ const Navv = () => (
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="auto">
-        <Nav.Link to='/tracks'>All Tracks</Nav.Link>
-        <Nav.Link to='/track-create'>Create New Track</Nav.Link>
-        <Nav.Link to='/search-tracks'>Search Track</Nav.Link>
+        <Nav.Link href="#tracks">All Tracks</Nav.Link>
+        <Nav.Link href="#track-create">Create New Track</Nav.Link>
+        <Nav.Link href="#search-tracks">Search Track</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

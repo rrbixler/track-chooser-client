@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 // destructuring^^^^^
 
 import axios from 'axios'
@@ -19,22 +19,60 @@ class TrackCreate extends Component {
         duration: '',
         tempo: '',
         keysig: ''
-      },
-      createdTrackId: null
+      }
     }
   }
 
-  handleSubmit = async event => {
-    // make axios requst, handle success, etc
+  handleSubmit = (event) => {
     event.preventDefault()
-    console.log('submitted!', event)
 
-    const response = await
-    axios.post(`${apiUrl}/tracks`, {
-      track: this.state.track
+    axios({
+      url: `${apiUrl}/tracks`,
+      method: 'POST',
+      headers: {
+        'Authorization': `Token token=${this.props.user.token}`
+      },
+      data: {
+        track: {
+          title: this.state.track.title,
+          artist: this.state.track.artist,
+          date: this.state.track.date,
+          duration: this.state.track.duration,
+          tempo: this.state.track.tempo,
+          keysig: this.state.track.keysig,
+          user_id: `${this.props.user.id}`
+        }
+      }
     })
-    this.setState({ createdTrackId: response.data.track.id })
+      .then(response => this.setState({
+        track: response.data.track
+      }))
+      .then(() => this.props.alert(`${this.state.track.title} has been added to the track list!`, 'success'))
+      .then(() => this.props.history.push('/tracks'))
+      .catch(() => {
+        this.props.alert('Whoops! Failed to add your track. Please try again.', 'danger')
+        this.setState({
+          title: '',
+          artist: '',
+          date: '',
+          duration: '',
+          tempo: '',
+          keysig: ''
+        })
+      })
   }
+
+  // handleSubmit = async event => {
+  //   // make axios requst, handle success, etc
+  //   event.preventDefault()
+  //   console.log('submitted!', event)
+  //
+  //   const response = await
+  //   axios.post(`${apiUrl}/tracks`, {
+  //     track: this.state.track
+  //   })
+  //   this.setState({ createdTrackId: response.data.track.id })
+  // }
 
   handleChange = event => {
     // access and update state
@@ -65,4 +103,4 @@ class TrackCreate extends Component {
   }
 }
 
-export default TrackCreate
+export default withRouter((TrackCreate))

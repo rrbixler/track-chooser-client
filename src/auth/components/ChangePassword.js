@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
+import { withRouter, Link } from 'react-router-dom'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 import { changePassword } from '../api'
 import messages from '../messages'
@@ -37,29 +39,35 @@ class ChangePassword extends Component {
     const { oldPassword, newPassword } = this.state
 
     return (
-      <form className='auth-form' onSubmit={this.onChangePassword}>
-        <h3>Change Password</h3>
-
-        <label htmlFor="oldpw">Old Password</label>
-        <input
-          required
-          name="oldPassword"
-          value={oldPassword}
-          type="password"
-          placeholder="Old Password"
-          onChange={this.handleChange}
-        />
-        <label htmlFor="newPassword">New Password</label>
-        <input
-          required
-          name="newPassword"
-          value={newPassword}
-          type="password"
-          placeholder="New Password"
-          onChange={this.handleChange}
-        />
-        <button type="submit">Change Password</button>
-      </form>
+      <Fragment>
+        <Form className='auth-form' onSubmit={this.onChangePassword}>
+          <h3>Change Password</h3>
+          <Form.Group controlId="oldPassword">
+            <Form.Label>Old Password</Form.Label>
+            <Form.Control className="rounded-0"
+              type="password"
+              placeholder="Old Password"
+              required
+              name="oldPassword"
+              value={oldPassword}
+              onChange={this.handleChange}
+            />
+          </Form.Group>
+          <Form.Group controlId="newPassword">
+            <Form.Label>New Password</Form.Label>
+            <Form.Control className="rounded-0"
+              type="password"
+              placeholder="New Password"
+              required
+              name="newPassword"
+              value={newPassword}
+              onChange={this.handleChange}
+            />
+            <Button variant="success" type='submit' className="rounded-0">Change Password</Button>
+            <Link to='/'><Button variant="warning" type='submit' className="rounded-0">Cancel</Button></Link>
+          </Form.Group>
+        </Form>
+      </Fragment>
     )
   }
 }

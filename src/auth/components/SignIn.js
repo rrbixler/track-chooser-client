@@ -45,7 +45,7 @@ class SignIn extends Component {
           <h3>Sign In</h3>
           <Form.Group controlId="email">
             <Form.Label>Email address</Form.Label>
-            <Form.Control
+            <Form.Control className="rounded-0"
               type="email"
               placeholder="Enter email"
               required
@@ -59,7 +59,7 @@ class SignIn extends Component {
           </Form.Group>
           <Form.Group controlId="password">
             <Form.Label>Password</Form.Label>
-            <Form.Control
+            <Form.Control className="rounded-0"
               type="password"
               placeholder="Enter password"
               required
@@ -68,7 +68,7 @@ class SignIn extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Button type='submit'>Sign In</Button>
+          <Button variant="success" type='submit' className="rounded-0">Sign In</Button>
         </Form>
       </Fragment>
     )

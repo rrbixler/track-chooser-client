@@ -28,12 +28,12 @@ const alwaysOptions = (
 
 const Header = ({ user }) => (
   <header className="main-header">
-    <Navbar collapseOnSelect bg="dark" expand="md" variant="dark">
+    <Navbar collapseOnSelect bg="dark" variant="dark">
       <Navbar.Brand href="#home">Track Finder</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          { user && <span>Welcome, {user.email}</span>}
+          { user && <span id = "welcome-message">Welcome, {user.email}</span>}
           { user ? authenticatedOptions : unauthenticatedOptions }
           { alwaysOptions }
         </Nav>

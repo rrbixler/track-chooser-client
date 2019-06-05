@@ -63,8 +63,8 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/tracks' render={() => (
             <Tracks alert={this.alert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} exact path='/track-create' render={({ match }) => (
-            <TrackCreate match={match} alert={this.alert} user={user} />
+          <AuthenticatedRoute user={user} exact path='/track-create' render={() => (
+            <TrackCreate alert={this.alert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/tracks/:id' render={({ match }) => (
             <Track match={match} alert={this.alert} user={user} />

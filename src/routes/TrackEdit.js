@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+// import Form from 'react-bootstrap/Form'
+// import Button from 'react-bootstrap/Button'
+import Layout from '../shared/Layout'
+import TrackFormEdit from '../shared/TrackFormEdit'
 
 import axios from 'axios'
 import apiUrl from '../apiConfig'
 
 // import Layout from '../shared/Layout'
-import TrackForm from '../shared/TrackForm'
+// import TrackForm from '../shared/TrackForm'
 
 class TrackEdit extends Component {
   constructor (props) {
@@ -24,15 +28,7 @@ class TrackEdit extends Component {
     }
   }
 
-  async componentDidMount () {
-    const response = await
-    axios(`${apiUrl}/tracks/${this.props.match.params.id}`)
-    this.setState({ track: response.data.track })
-  }
-
   handleChange = event => {
-    // access and update state
-    console.log('changing stuff!', event)
     const updatedField = {
       [event.target.name]: event.target.value
     }
@@ -47,6 +43,9 @@ class TrackEdit extends Component {
     await axios({
       url: `${apiUrl}/tracks/${this.props.match.params.id}`,
       method: 'PATCH',
+      headers: {
+        'Authorization': `Token token=${this.props.user.token}`
+      },
       data: {
         track: this.state.track
       }
@@ -60,14 +59,14 @@ class TrackEdit extends Component {
       return <Redirect to={`/tracks/${this.props.match.params.id}`} />
     }
     return (
-      <div>
-        <TrackForm
+      <Layout>
+        <TrackFormEdit
           track={track}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          cancelPath={`/tracks/${this.props.match.params.id}`}
+          cancelPath={`/movies/${this.props.match.params.id}`}
         />
-      </div>
+      </Layout>
     )
   }
 }

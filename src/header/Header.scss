@@ -21,6 +21,10 @@ $charcoal: #bbb;
   justify-content: flex-end;
 }
 
+.track-finder-title {
+  color: green;
+}
+
 @media (max-width: 600px) {
   .main-header {
     flex-direction: column;
