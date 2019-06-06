@@ -44,9 +44,9 @@ class SignUp extends Component {
     return (
       <Fragment>
         <Form className='auth-form' onSubmit={this.onSignUp}>
-          <h3>Sign Up</h3>
+          <h3 className="white">Sign Up</h3>
           <Form.Group controlId="email">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label className="white">Email address</Form.Label>
             <Form.Control className="rounded-0"
               type="email"
               placeholder="Enter email"
@@ -60,7 +60,7 @@ class SignUp extends Component {
             </Form.Text>
           </Form.Group>
           <Form.Group controlId="password">
-            <Form.Label>Password</Form.Label>
+            <Form.Label className="white">Password</Form.Label>
             <Form.Control className="rounded-0"
               type="password"
               placeholder="Enter password"
@@ -71,7 +71,7 @@ class SignUp extends Component {
             />
           </Form.Group>
           <Form.Group controlId="passwordConfirmation">
-            <Form.Label>Confirm Password</Form.Label>
+            <Form.Label className="white">Confirm Password</Form.Label>
             <Form.Control className="rounded-0"
               type="password"
               placeholder="Confirm password"

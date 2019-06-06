@@ -62,18 +62,6 @@ class TrackCreate extends Component {
       })
   }
 
-  // handleSubmit = async event => {
-  //   // make axios requst, handle success, etc
-  //   event.preventDefault()
-  //   console.log('submitted!', event)
-  //
-  //   const response = await
-  //   axios.post(`${apiUrl}/tracks`, {
-  //     track: this.state.track
-  //   })
-  //   this.setState({ createdTrackId: response.data.track.id })
-  // }
-
   handleChange = event => {
     // access and update state
     console.log('changing stuff!', event)

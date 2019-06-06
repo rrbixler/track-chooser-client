@@ -6,38 +6,34 @@ import Nav from 'react-bootstrap/Nav'
 
 const authenticatedOptions = (
   <React.Fragment>
-    <Nav.Link href="#tracks">Tracks</Nav.Link>
-    <Nav.Link href="#change-password">Change Password</Nav.Link>
-    <Nav.Link href="#sign-out">Sign Out</Nav.Link>
   </React.Fragment>
 )
 
 const unauthenticatedOptions = (
   <React.Fragment>
-    <Nav.Link href="#sign-up">Sign Up</Nav.Link>
-    <Nav.Link href="#sign-in">Sign In</Nav.Link>
   </React.Fragment>
 )
 
 const alwaysOptions = (
   <React.Fragment>
-    <Nav.Link href="#home">Home</Nav.Link>
+    <Nav.Link href="#">Created by Robbie Bixler</Nav.Link>
   </React.Fragment>
 )
 
-const Header = ({ user }) => (
-  <header className="main-header">
-    <Navbar collapseOnSelect bg="dark" variant="dark">
-      <Navbar.Brand href="#home">Track Finder</Navbar.Brand>
+const Footer = ({ user }) => (
+  <footer className="main-header">
+    <Navbar fixed="bottom" collapseOnSelect bg="dark" variant="dark">
+      <Navbar.Brand href="#home">helping Djs stay on track</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
+          { user && <Nav.Link href="#"id = "welcome-message">Welcome, {user.email}</Nav.Link>}
           { user ? authenticatedOptions : unauthenticatedOptions }
           { alwaysOptions }
         </Nav>
       </Navbar.Collapse>
     </Navbar>
-  </header>
+  </footer>
 )
 
-export default Header
+export default Footer

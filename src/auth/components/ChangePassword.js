@@ -41,9 +41,9 @@ class ChangePassword extends Component {
     return (
       <Fragment>
         <Form className='auth-form' onSubmit={this.onChangePassword}>
-          <h3>Change Password</h3>
+          <h3 className="white">Change Password</h3>
           <Form.Group controlId="oldPassword">
-            <Form.Label>Old Password</Form.Label>
+            <Form.Label className="white">Old Password</Form.Label>
             <Form.Control className="rounded-0"
               type="password"
               placeholder="Old Password"
@@ -54,7 +54,7 @@ class ChangePassword extends Component {
             />
           </Form.Group>
           <Form.Group controlId="newPassword">
-            <Form.Label>New Password</Form.Label>
+            <Form.Label className="white">New Password</Form.Label>
             <Form.Control className="rounded-0"
               type="password"
               placeholder="New Password"

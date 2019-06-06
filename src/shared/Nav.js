@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
 const Navv = () => (
-  <Navbar collapseOnSelect bg="dark" expand="md" variant="dark">
+  <Navbar collapseOnSelect bg="dark" variant="dark">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="auto">

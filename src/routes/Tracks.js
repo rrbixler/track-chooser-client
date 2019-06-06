@@ -51,11 +51,11 @@ class Tracks extends Component {
     ))
     return (
       <Layout>
-        <h3>Track List</h3>
+        <h3 className="white">Track List</h3>
         <Container>
           <Row>
-            <Col>Title</Col>
-            <Col>Artist</Col>
+            <Col className="white">Title</Col>
+            <Col className="white">Artist</Col>
           </Row>
         </Container>
         <ListGroup>

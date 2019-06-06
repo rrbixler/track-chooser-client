@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-const TrackForm = ({ track, handleChange, handleSubmit, cancelPath }) => (
+const TrackFormEdit = ({ track, handleChange, handleSubmit, cancelPath }) => (
   <Form onSubmit={handleSubmit}>
     <Form.Group>
-      <Form.Label>Title</Form.Label>
+      <Form.Label className="white">Title</Form.Label>
       <Form.Control className="rounded-0"
         name="title"
         type="string"
@@ -16,7 +16,7 @@ const TrackForm = ({ track, handleChange, handleSubmit, cancelPath }) => (
       />
     </Form.Group>
     <Form.Group>
-      <Form.Label>Artist</Form.Label>
+      <Form.Label className="white">Artist</Form.Label>
       <Form.Control className="rounded-0"
         name="artist"
         placeholder="Artist"
@@ -26,7 +26,7 @@ const TrackForm = ({ track, handleChange, handleSubmit, cancelPath }) => (
       />
     </Form.Group>
     <Form.Group>
-      <Form.Label>Date</Form.Label>
+      <Form.Label className="white">Date</Form.Label>
       <Form.Control className="rounded-0"
         name="date"
         type="date"
@@ -36,7 +36,7 @@ const TrackForm = ({ track, handleChange, handleSubmit, cancelPath }) => (
       />
     </Form.Group>
     <Form.Group>
-      <Form.Label>Duration</Form.Label>
+      <Form.Label className="white">Duration</Form.Label>
       <Form.Control className="rounded-0"
         name="duration"
         type="integer"
@@ -46,7 +46,7 @@ const TrackForm = ({ track, handleChange, handleSubmit, cancelPath }) => (
       />
     </Form.Group>
     <Form.Group>
-      <Form.Label>Tempo</Form.Label>
+      <Form.Label className="white">Tempo</Form.Label>
       <Form.Control className="rounded-0"
         name="tempo"
         type="integer"
@@ -56,7 +56,7 @@ const TrackForm = ({ track, handleChange, handleSubmit, cancelPath }) => (
       />
     </Form.Group>
     <Form.Group>
-      <Form.Label>Key Signature</Form.Label>
+      <Form.Label className="white">Key Signature</Form.Label>
       <Form.Control className="rounded-0"
         name="keysig"
         type="integer"
@@ -67,8 +67,8 @@ const TrackForm = ({ track, handleChange, handleSubmit, cancelPath }) => (
       />
     </Form.Group>
     <Button variant="info" type="submit" className="rounded-0">Submit Track</Button>
-    <Link to='/tracks'><Button variant="warning" className="rounded-0">Cancel</Button></Link>
+    <Link to={cancelPath}><Button variant="warning" className="rounded-0">Cancel</Button></Link>
   </Form>
 )
 
-export default TrackForm
+export default TrackFormEdit

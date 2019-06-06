@@ -28,6 +28,17 @@ class TrackEdit extends Component {
     }
   }
 
+  async componentDidMount () {
+    const response = await axios({
+      url: `${apiUrl}/tracks/${this.props.match.params.id}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Token token=${this.props.user.token}`
+      }
+    })
+    this.setState({ track: response.data.track })
+  }
+
   handleChange = event => {
     const updatedField = {
       [event.target.name]: event.target.value
@@ -64,7 +75,7 @@ class TrackEdit extends Component {
           track={track}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          cancelPath={`/movies/${this.props.match.params.id}`}
+          cancelPath={`/tracks/${this.props.match.params.id}`}
         />
       </Layout>
     )

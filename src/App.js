@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './header/Header'
+import Footer from './footer/Footer'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
@@ -13,7 +14,7 @@ import TrackCreate from './routes/TrackCreate'
 import Track from './routes/Track'
 import TrackEdit from './routes/TrackEdit'
 import SearchTracks from './routes/SearchTracks'
-
+// import ReactTransitionGroup from 'react-transition-group/ReactTransitionGroup'
 import Alert from 'react-bootstrap/Alert'
 
 class App extends Component {
@@ -22,7 +23,8 @@ class App extends Component {
 
     this.state = {
       user: null,
-      alerts: []
+      alerts: [],
+      visible: false
     }
   }
 
@@ -41,7 +43,7 @@ class App extends Component {
       <React.Fragment>
         <Header user={user} />
         {alerts.map((alert, index) => (
-          <Alert key={index} dismissible variant={alert.type}>
+          <Alert fixed="bottom" key={index} dismissible variant={alert.type} color="info">
             <Alert.Heading>
               {alert.message}
             </Alert.Heading>
@@ -76,6 +78,7 @@ class App extends Component {
             <SearchTracks match={match} alert={this.alert} user={user} />
           )} />
         </main>
+        <Footer user={user} />
       </React.Fragment>
     )
   }

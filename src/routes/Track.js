@@ -29,19 +29,8 @@ class Track extends Component {
         'Authorization': `Token token=${this.props.user.token}`
       }
     })
-    this.setState({ track: response.data })
+    this.setState({ track: response.data.track })
   }
-  // // const { user } = this.props
-  // const response = await axios(`${apiUrl}/tracks/${this.props.match.params.id}`)
-  // console.log(response)
-  // console.log(this.props)
-  // // const myTracks = []
-  // // response.data.track.filter(track => {
-  // //   if (user.user_id === track.user_id) {
-  // //     myTracks.push(track)
-  // //   }
-  // // })
-  // this.setState({ track: myTracks })
 
   destroy = async track => {
     await axios({
@@ -71,38 +60,37 @@ class Track extends Component {
     return (
       <div>
         <Layout>
-          <Link to='/tracks'><Button className="rounded-0" variant="outline-info" block>Back to all Tracks</Button></Link>
           <Card>
             <Card.Body>
               <ListGroup className="list-group-flush">
                 <ListGroupItem>
                   <Row>
                     <Col>Title:</Col>
-                    <Col>{ track.track.title }</Col>
+                    <Col>{ track.title }</Col>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem>
                   <Row>
                     <Col>Artist:</Col>
-                    <Col>{ track.track.artist }</Col>
+                    <Col>{ track.artist }</Col>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem>
                   <Row>
                     <Col>Date:</Col>
-                    <Col>{ track.track.date }</Col>
+                    <Col>{ track.date }</Col>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem>
                   <Row>
                     <Col>Run Time: </Col>
-                    <Col>{track.track.duration ? track.track.duration : 'unknown'} seconds</Col>
+                    <Col>{track.duration ? track.duration : 'unknown'} seconds</Col>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem>
                   <Row>
                     <Col><p>Tempo:</p></Col>
-                    <Col><p>{track.track.tempo ? track.track.tempo : 'unknown'} bpm</p></Col>
+                    <Col><p>{track.tempo ? track.tempo : 'unknown'} bpm</p></Col>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem>
@@ -111,19 +99,26 @@ class Track extends Component {
                     <Col><p>{track.keysig ? track.keysig : 'unknown'}</p></Col>
                   </Row>
                   <Row>
-                    <Col><p>User ID:</p></Col>
-                    <Col><p>{`${this.props.user.id}` ? `${this.props.user.id}` : 'unknown'}</p></Col>
+                    <Col><p>Added By:</p></Col>
+                    <Col><p>{`${this.props.user.email}` ? `${this.props.user.email}` : 'unknown'}</p></Col>
                   </Row>
                 </ListGroupItem>
                 <ListGroupItem>
                   <Row>
                     <Col>
-                      <Link to={'/tracks/' + track.track.id + '/edit'}>
+                      <Link to={'/tracks/' + track.id + '/edit'}>
                         <Button className="rounded-0" variant="outline-success">Edit</Button>
                       </Link>
                     </Col>
                     <Col>
-                      <Button className="rounded-0" variant="outline-warning" onClick={this.destroy}>Delete Track</Button>
+                      <Button className="rounded-0" variant="outline-warning"
+                        onClick={this.destroy}>Delete Track</Button>
+                    </Col>
+                    <Col>
+                      <Link to='/tracks'>
+                        <Button className="rounded-0" variant="outline-info"
+                          block>Back to all Tracks</Button>
+                      </Link>
                     </Col>
                   </Row>
                 </ListGroupItem>
