@@ -43,13 +43,6 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header user={user} />
-        {alerts.map((alert, index) => (
-          <AutoDismissAlert key={index} dismissible alert={alert}>
-            <Alert.Heading>
-              {alert.message}
-            </Alert.Heading>
-          </AutoDismissAlert>
-        ))}
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
@@ -79,6 +72,13 @@ class App extends Component {
             <SearchTracks match={match} alert={this.alert} user={user} />
           )} />
         </main>
+        {alerts.map((alert, index) => (
+          <AutoDismissAlert key={index} dismissible alert={alert}>
+            <Alert.Heading>
+              {alert.message}
+            </Alert.Heading>
+          </AutoDismissAlert>
+        ))}
         <Footer user={user} />
       </React.Fragment>
     )
