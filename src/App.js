@@ -14,6 +14,7 @@ import TrackCreate from './routes/TrackCreate'
 import Track from './routes/Track'
 import TrackEdit from './routes/TrackEdit'
 import SearchTracks from './routes/SearchTracks'
+import AutoDismissAlert from './routes/AutoDismissAlert'
 // import ReactTransitionGroup from 'react-transition-group/ReactTransitionGroup'
 import Alert from 'react-bootstrap/Alert'
 
@@ -43,11 +44,11 @@ class App extends Component {
       <React.Fragment>
         <Header user={user} />
         {alerts.map((alert, index) => (
-          <Alert fixed="bottom" key={index} dismissible variant={alert.type} color="info">
+          <AutoDismissAlert key={index} dismissible alert={alert}>
             <Alert.Heading>
               {alert.message}
             </Alert.Heading>
-          </Alert>
+          </AutoDismissAlert>
         ))}
         <main className="container">
           <Route path='/sign-up' render={() => (

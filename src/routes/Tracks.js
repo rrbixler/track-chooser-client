@@ -43,7 +43,9 @@ class Tracks extends Component {
       <ListGroup.Item key={track.id}>
         <Container>
           <Row>
-            <Col><Link to={'./tracks/' + track.id}><Button className="rounded-0" variant="outline-info" block>{track.title}</Button></Link></Col>
+            <Col><Link to={'./tracks/' + track.id}>
+              <Button className="rounded-0" variant="outline-info" block>{track.title}</Button>
+            </Link></Col>
             <Col><p>{track.artist}</p></Col>
           </Row>
         </Container>
@@ -58,7 +60,7 @@ class Tracks extends Component {
             <Col className="white">Artist</Col>
           </Row>
         </Container>
-        <ListGroup>
+        <ListGroup className="all-tracks">
           {tracks}
         </ListGroup>
       </Layout>

@@ -61,6 +61,7 @@ class TrackEdit extends Component {
         track: this.state.track
       }
     })
+      .then(() => this.props.alert(`${this.state.track.title} has been updated!`, 'success'))
     this.setState({ updated: true })
   }
 

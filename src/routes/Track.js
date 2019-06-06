@@ -40,6 +40,7 @@ class Track extends Component {
         'Authorization': `Token token=${this.props.user.token}`
       }
     })
+      .then(() => this.props.alert(`${this.state.track.title} has been deleted`, 'success'))
     this.setState({ deleted: true })
   }
 
@@ -60,7 +61,7 @@ class Track extends Component {
     return (
       <div>
         <Layout>
-          <Card>
+          <Card className="all-tracks">
             <Card.Body>
               <ListGroup className="list-group-flush">
                 <ListGroupItem>

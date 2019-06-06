@@ -1,3 +1,11 @@
+$success: rgba(228, 71, 89, .94);
+$info: rgba(46, 17, 124, .94);
+$warning: rgba(151, 250 ,78, .94);
+$danger: rgba(153, 201, 116, .94);
+$secondary: rgba(123, 324, 432, .9);
+$dark: black;
+
+@import '~bootstrap/scss/bootstrap';
 
 body {
   font-family: sans-serif;
@@ -20,4 +28,12 @@ body {
 
 .white {
   color: white;
+}
+
+.all-tracks {
+  opacity: .9;
+}
+
+.the-title {
+  font-size: 40px;
 }
