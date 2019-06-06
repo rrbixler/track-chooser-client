@@ -21,7 +21,7 @@ const alwaysOptions = (
 )
 
 const Footer = ({ user }) => (
-  <footer className="main-header">
+  <footer className="main-header footer-main">
     <Navbar fixed="bottom" collapseOnSelect bg="success" variant="dark">
       <Navbar.Brand href="#home">helping Djs stay on track</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
