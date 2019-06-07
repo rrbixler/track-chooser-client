@@ -13,7 +13,6 @@ import Tracks from './routes/Tracks'
 import TrackCreate from './routes/TrackCreate'
 import Track from './routes/Track'
 import TrackEdit from './routes/TrackEdit'
-import SearchTracks from './routes/SearchTracks'
 import AutoDismissAlert from './routes/AutoDismissAlert'
 // import ReactTransitionGroup from 'react-transition-group/ReactTransitionGroup'
 import Alert from 'react-bootstrap/Alert'
@@ -67,9 +66,6 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/tracks/:id/edit' render={({ match }) => (
             <TrackEdit match={match} alert={this.alert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} path='/search-tracks' render={({ match }) => (
-            <SearchTracks match={match} alert={this.alert} user={user} />
           )} />
         </main>
         {alerts.map((alert, index) => (
