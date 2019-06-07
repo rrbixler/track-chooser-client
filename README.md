@@ -17,11 +17,11 @@ that specific track.
 
  ### Project Links
 
-  Front-End Repo: https://github.com/rrbixler/track-chooser-client
-  Back-End Repo: https://github.com/rrbixler/track-chooser-api
+ 1.  [ ]  Front-End Repo: https://github.com/rrbixler/track-chooser-client
+ 1.  [ ]  Back-End Repo: https://github.com/rrbixler/track-chooser-api
 
-  Front-End Deployed Site: https://rrbixler.github.io/track-chooser-client/#/sign-in
-  Back-End: https://shielded-cove-86358.herokuapp.com/
+ 1.  [ ]  Front-End Deployed Site: https://rrbixler.github.io/track-chooser-client/#/sign-in
+ 1.  [ ]  Back-End: https://shielded-cove-86358.herokuapp.com/
 
  ### Technologies Used
 
@@ -50,29 +50,19 @@ https://imgur.com/us5dUZp
 
 ### User Stories
 
-as a user I want to sign up to use the Track Finder app
-
-as a user I want to sign in to use the Track Finder app
-
-as a user I want to change my password
-
-as a user I want to sign out of use the Track Finder app
-
-as a user I want to view a single track by id
-
-as a user I want to view all the tracks in my collection by title and artist
-
-as a user I want to create a track
-
-as a user I want to edit a track by id
-
-as a user I want to delete tracks from my collection
-
-as a user I want to sign in to use the Spotify's API
-
-as a user I want to search spotify for tracks and query searh to include searching by bpm
-
-as a user I want to add properties of search result tracks to a new track in my colleciton
+1.  [ ]  as a user I want to sign up to use the Track Finder app
+1.  [ ]  as a user I want to sign in to use the Track Finder app
+1.  [ ]  as a user I want to change my password
+1.  [ ]  as a user I want to sign out of use the Track Finder app
+1.  [ ]  as a user I want to view a single track by id
+1.  [ ]  as a user I want to view all the tracks in my collection by title and artist
+1.  [ ]  as a user I want to create a track
+1.  [ ]  as a user I want to edit a track by id
+1.  [ ]  as a user I want to delete tracks from my collection
+#### Version 2 goals:
+1.  [ ]  as a user I want to sign in to use the Spotify's API
+1.  [ ]  as a user I want to search spotify for tracks and query searh to include searching by bpm
+1.  [ ]  as a user I want to add properties of search result tracks to a new track in my colleciton
 
  ### Set Up and Installation Instructions
 To use the app, simply sign up with a fake email account and password of your choice.
