@@ -64,7 +64,10 @@ https://imgur.com/us5dUZp
 1.  [ ]  as a user I want to add properties of search result tracks to a new track in my colleciton
 
  ### Set Up and Installation Instructions
-To use the app, simply sign up with a fake email account and password of your choice.
-There is no other
+
+ 1. Fork and clone this repository.
+ 1. Change into the new directory.
+ 1. Install dependencies with 'npm install'.
+ 1. Create and checkout a new branch.
 
 <img width="1109" alt="Screen Shot 2019-06-07 at 6 42 14 AM" src="https://user-images.githubusercontent.com/48069692/59099235-95e74100-88f0-11e9-8630-7a691ea4e1c9.png">
