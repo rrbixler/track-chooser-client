@@ -34,7 +34,6 @@ With this search function, users can search for tracks this way instead of havin
 to manually enter information.
 
  ### Planning Documentation, Process and Problem Solving strategy
- ------Document your planning, process and problem-solving strategy
  My initial plan was to implement spotify's third party API the whole time.  However, I  ran into
  problems on Day 1 with my back-end and had to make an entire new back end repository and heroku.
  At that point I decided to put off the third-party API until after project week.  I ran into countless
