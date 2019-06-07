@@ -78,4 +78,4 @@ as a user I want to add properties of search result tracks to a new track in my 
 To use the app, simply sign up with a fake email account and password of your choice.
 There is no other
 
-![alt text](https://imgur.com/16yHTdF)
+<img width="1109" alt="Screen Shot 2019-06-07 at 6 42 14 AM" src="https://user-images.githubusercontent.com/48069692/59099235-95e74100-88f0-11e9-8630-7a691ea4e1c9.png">
