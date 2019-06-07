@@ -16,7 +16,7 @@ const unauthenticatedOptions = (
 
 const alwaysOptions = (
   <React.Fragment>
-    <Nav.Link href="#">Created by Robbie Bixler</Nav.Link>
+    <Nav.Link className="disabled" href="#">Created by Robbie Bixler</Nav.Link>
   </React.Fragment>
 )
 
@@ -27,7 +27,7 @@ const Footer = ({ user }) => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          { user && <Nav.Link href="#"id = "welcome-message">Welcome, {user.email}</Nav.Link>}
+          { user && <Nav.Link className="disabled" href="#"id = "welcome-message">Welcome, {user.email}</Nav.Link>}
           { user ? authenticatedOptions : unauthenticatedOptions }
           { alwaysOptions }
         </Nav>

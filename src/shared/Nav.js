@@ -11,7 +11,7 @@ const Navv = () => (
       <Nav className="auto">
         <Nav.Link href="#tracks">All Tracks</Nav.Link>
         <Nav.Link href="#track-create">Create New Track</Nav.Link>
-        <Nav.Link href="#search-tracks">Search Track</Nav.Link>
+        <Nav.Link className="disabled" href="#search-tracks">Search Track</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>

@@ -2,10 +2,6 @@
 
 # Track Chooser Client
 
--- CHECK Create 2 Github repos (one for your front-end and one for your back-end)
- ---CHECK Pin both repositories on GitHub as a Popular Repository
-------Both front-end and back-end repos should include README's with:
-
 ### App Explanation
 
 The app makes it easy for users to keep track of their favorite tracks and lets
@@ -56,17 +52,29 @@ Link to wireframes and user stories (imgur)
 
 
 ### User Stories
+
 as a user I want to sign up to use the Track Finder app
+
 as a user I want to sign in to use the Track Finder app
+
 as a user I want to change my password
+
 as a user I want to sign out of use the Track Finder app
+
 as a user I want to view a single track by id
+
 as a user I want to view all the tracks in my collection by title and artist
+
 as a user I want to create a track
+
 as a user I want to edit a track by id
+
 as a user I want to delete tracks from my collection
+
 as a user I want to sign in to use the Spotify's API
+
 as a user I want to search spotify for tracks and query searh to include searching by bpm
+
 as a user I want to add properties of search result tracks to a new track in my colleciton
 
  ### Set Up and Installation Instructions
