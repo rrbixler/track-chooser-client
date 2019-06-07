@@ -64,7 +64,6 @@ class TrackCreate extends Component {
 
   handleChange = event => {
     // access and update state
-    console.log('changing stuff!', event)
     const updatedField = {
       [event.target.name]: event.target.value
     }

@@ -1,5 +1,3 @@
-### EMBEDDED SCREENSHOT OF APP
-
 # Track Chooser Client
 
 ### App Explanation
@@ -45,11 +43,10 @@ to manually enter information.
 
  One of my problems I ran into: when i originally scaffolded out my resource for tracks, I used "key" as a keyword to reopresent 'key signature' which I eventually had to change to "keysig".  This was creating errors in which the key signature of the song (represented as a number) was being read by the console as the actual data key for the track and not the representation of the key signature.
 
-
-### Wireframes and User stories
-Link to wireframes and user stories (imgur)
 ### Wireframes
 
+https://imgur.com/Jfku5lp
+https://imgur.com/us5dUZp
 
 ### User Stories
 
@@ -80,3 +77,5 @@ as a user I want to add properties of search result tracks to a new track in my 
  ### Set Up and Installation Instructions
 To use the app, simply sign up with a fake email account and password of your choice.
 There is no other
+
+![image](https://imgur.com/16yHTdF)
